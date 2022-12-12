@@ -1,5 +1,9 @@
-import { useEffect, useState } from "react"
-import { NavBar, Container } from "react-bootstrap"
+import { useState, useEffect } from "react"
+import { Navbar, Container, Nav } from "react-bootstrap"
+import logo from "../assets/img/logo.svg"
+import navIcon1 from "../assets/img/nav-icon1.svg"
+import navIcon2 from "../assets/img/nav-icon2.svg"
+import navIcon3 from "../assets/img/nav-icon3.svg"
 
 export const NavBar = () => {
 
@@ -20,12 +24,15 @@ export const NavBar = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, [])
 
+    const onUpdateActiveLink = (value) => {
+        setActiveLink(value);
+    }
+
     return (
-        <Router>
           <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
             <Container>
               <Navbar.Brand href="/">
-                <img src={''} alt="Logo" />
+                <img src={logo} alt="Logo" />
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav">
                 <span className="navbar-toggler-icon"></span>
@@ -38,17 +45,14 @@ export const NavBar = () => {
                 </Nav>
                 <span className="navbar-text">
                   <div className="social-icon">
-                    <a href="#"><img src={''} alt="" /></a>
-                    <a href="#"><img src={''} alt="" /></a>
-                    <a href="#"><img src={''} alt="" /></a>
+                    <a href="https://www.linkedin.com/in/mathieu-kohl/"><img src={navIcon1} alt="linkedin" /></a>
+                    <a href="https://github.com/mathieukohl"><img src={navIcon2} alt="github" /></a>
+                    <a href="https://www.instagram.com/kohlmathieu/"><img src={navIcon3} alt="instagram" /></a>
                   </div>
-                  <HashLink to='#connect'>
                     <button className="vvd"><span>Let’s Connect</span></button>
-                  </HashLink>
                 </span>
               </Navbar.Collapse>
             </Container>
           </Navbar>
-        </Router>
       )
 }
