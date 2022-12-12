@@ -16,7 +16,8 @@ export const Banner = () => {
     useEffect(() => {
         let ticker = setInterval(() => {
             tick();
-        },delta)
+        }, delta);
+        
         return () => { clearInterval(ticker) }
     }, [text])
 
