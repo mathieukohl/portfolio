@@ -46,15 +46,19 @@ export const Banner = () => {
         }
     }
 
+    const openInNewTab = url => {
+        window.open(url, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <section className="banner" id="home">
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
                         <span className="tagline">Welcome to my Portfolio</span>
-                        <h1>{`Hi I'm Mathieu `}<span className="wrap">{text}</span></h1>
+                        <h1>{`Hi I'm Mathieu, `}<span className="wrap">{text}</span></h1>
                         <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500</p>
-                        <button onClick={()=> console.log('connect')}>Let's connect <ArrowRightCircle size={25}/></button>
+                        <button onClick={()=> openInNewTab('https://www.linkedin.com/in/mathieu-kohl/')}>Let's connect <ArrowRightCircle size={25}/></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
                         <img class="img_rotate" src={headerImg} alt="Header Img"/>

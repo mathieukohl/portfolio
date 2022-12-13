@@ -28,6 +28,10 @@ export const NavBar = () => {
         setActiveLink(value);
     }
 
+    const openInNewTab = url => {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    };
+
     return (
           <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
             <Container>
@@ -49,7 +53,7 @@ export const NavBar = () => {
                     <a href="https://github.com/mathieukohl"><img src={navIcon2} alt="github" /></a>
                     <a href="https://www.instagram.com/kohlmathieu/"><img src={navIcon3} alt="instagram" /></a>
                   </div>
-                    <button className="vvd"><span>Let’s Connect</span></button>
+                    <button onClick={()=> openInNewTab('https://www.linkedin.com/in/mathieu-kohl/')} className="vvd"><span>Let’s Connect</span></button>
                 </span>
               </Navbar.Collapse>
             </Container>
