@@ -8,18 +8,13 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <Container>
-        <Row className="align-items-center">
-          <Col sm={6}>
-            <img src={logo} alt="Logo" />
-          </Col>
-          <Col sm={6} className="text-center text-sm-end">
+        <Row className="align-items-center text-center">
             <div className="social-icon-footer">
               <a href="https://www.linkedin.com/in/mathieu-kohl/"><img src={navIcon1} alt="linkedin" /></a>
               <a href="https://github.com/mathieukohl"><img src={navIcon2} alt="github" /></a>
               <a href="https://www.instagram.com/kohlmathieu/"><img src={navIcon3} alt="instagram" /></a>
             </div>
             <p>Copyright 2022. All Rights Reserved</p>
-          </Col>
         </Row>
       </Container>
     </footer>
