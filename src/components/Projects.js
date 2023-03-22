@@ -1,27 +1,16 @@
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import projImg1 from "../assets/img/stayinmtn.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 
 export const Projects = () => {
 
-    const projects = [
+    const webProjects = [
         {
-            title: "Business Startup",
+            title: "stayinmtn.com",
             description: "Design & Development",
+            linkUrl: "https://www.stayinmtn.com/",
             imgUrl: projImg1,
-          },
-          {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg2,
-          },
-          {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg3,
           },
     ];
     return (
@@ -30,24 +19,24 @@ export const Projects = () => {
                 <Row>
                     <Col>
                         <h2>Projects</h2>
-                        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500</p>
+                        <p>Below, you'll find a selection of some of my recent work as a full-stack developer. Each project showcases my skills and expertise in a range of technologies</p>
                         <Tab.Container id="projects-tabs" defaultActiveKey="first">
                             <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                 <Nav.Item>
-                                    <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                                    <Nav.Link eventKey="first">Web</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                                    <Nav.Link eventKey="second">App</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                                    <Nav.Link eventKey="third">Ecommerce</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                             <Tab.Content>
                                 <Tab.Pane eventKey="first">
-                                    <Row>
+                                    <Row className={"justify-content-center"}>
                                         {
-                                        projects.map((project, index) => {
+                                        webProjects.map((project, index) => {
                                             return (
                                             <ProjectCard
                                                 key={index}
@@ -59,10 +48,10 @@ export const Projects = () => {
                                     </Row>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                                    <p>Coming soon</p>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="third">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                                    <p>Coming soon</p>
                                 </Tab.Pane>
                             </Tab.Content>
                         </Tab.Container>

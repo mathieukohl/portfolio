@@ -61,7 +61,7 @@ export const Banner = () => {
                         <div className={"animate__animated animate__fadeIn"}>
                             <span className="tagline">Welcome to my Portfolio</span>
                             <h2>{`Hi I'm Mathieu, `}<span className="wrap">{text}</span></h2>
-                            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500</p>
+                            <p>Passionate about the IT world, I am currently working as Full Stack Developer. Curious and passionate about innovation, I am interested in any project that could improve my skills and my goals.</p>
                             <button onClick={()=> openInNewTab('https://www.linkedin.com/in/mathieu-kohl/')}>Let's connect <ArrowRightCircle size={25}/></button>
                         </div>
                     </Col>
