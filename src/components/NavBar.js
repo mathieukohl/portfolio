@@ -4,6 +4,7 @@ import logo from "../assets/img/logo_Mathieu.png"
 import navIcon1 from "../assets/img/nav-icon1.svg"
 import navIcon2 from "../assets/img/nav-icon2.svg"
 import navIcon3 from "../assets/img/nav-icon3.svg"
+import navIcon4 from "../assets/img/fiverr-white.svg"
 
 export const NavBar = () => {
 
@@ -52,6 +53,7 @@ export const NavBar = () => {
                     <a href="https://www.linkedin.com/in/mathieu-kohl/"><img src={navIcon1} alt="linkedin" /></a>
                     <a href="https://github.com/mathieukohl"><img src={navIcon2} alt="github" /></a>
                     <a href="https://www.instagram.com/kohlmathieu/"><img src={navIcon3} alt="instagram" /></a>
+                    <a href="https://www.fiverr.com/kohlmathieu"><img src={navIcon4} alt="instagram" /></a>
                   </div>
                     <button onClick={()=> openInNewTab('https://www.linkedin.com/in/mathieu-kohl/')} className="vvd"><span>Let’s Connect</span></button>
                 </span>

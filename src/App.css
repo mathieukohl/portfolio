@@ -345,6 +345,36 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+/************ Fiverr Css ************/
+
+.fiverr-badge {
+  padding: 80px 0;
+  position: relative;
+}
+
+.fiverr-badge h2 {
+	font-size: 45px;
+	font-weight: 700;
+  text-align: center;
+}
+
+.fiverr-badge button {
+	font-size: 25px;
+	font-weight: 700;
+  text-align: center;
+  background-color:  #1DBF73;
+  border-color:  #1DBF73;
+}
+
+.fiverr-badge button:hover {
+	font-size: 25px;
+	font-weight: 700;
+  text-align: center;
+  background-color:  #00b22d;
+  border-color:  #1DBF73;
+}
+
+
 /************ Projects Css ************/
 .project {
   padding: 80px 0;
