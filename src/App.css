@@ -598,6 +598,54 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 100%;
 }
 
+/************ About Css ************/
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  background-color: black;
+  position: relative;
+}
+
+.about-left-content {
+  flex: 1;
+  padding: 150px;
+}
+
+.about-right-content {
+  flex: 1;
+  text-align: right;
+}
+
+.about-right-content img {
+  max-width: 75%;
+  height: auto;
+}
+
+.about-paragraph {
+  text-align: justify;
+}
+
+/* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; 
+    text-align: center; /* Center align the text */
+  }
+
+  .about-left-content,
+  .about-right-content {
+    flex: none; /* Remove flex properties so they stack on top of each other */
+    padding: 20px; /* Adjust the padding as needed */
+  }
+
+  .about-right-content img {
+    max-width: 100%; /* Make the image full-width */
+  }
+}
+
 /************ Footer Css ************/
 .footer {
   padding: 20px 0 50px 0;
