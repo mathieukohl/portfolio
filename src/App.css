@@ -110,7 +110,6 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     opacity: 1;
 }
 span.navbar-text {
-    display: flex;
     align-items: center;
 }
 .social-icon {
@@ -158,6 +157,7 @@ span.navbar-text {
   padding: 10px 34px;
   font-size: 18px;
   margin-left: 18px;
+  margin-top: 5px;
 	position: relative;
 	background-color: transparent;
 	transition: 0.3s ease-in-out;
@@ -499,6 +499,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 100%;
   color: #fff;
 }
+
+.proj-img {
+  height: 270px; /* Set the desired height */
+  width: auto;
+}
+
 .proj-imgbx:hover .proj-txtx {
   top: 50%;
   opacity: 1;

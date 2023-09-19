@@ -1,18 +1,14 @@
-import projImg1 from "../assets/img/stayinmtn.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
+import { webProjects } from "./projects/WebProject";
+import { appProjects } from "./projects/AppProject";
 
 export const Projects = () => {
 
-    const webProjects = [
-        {
-            title: "stayinmtn.com",
-            description: "Design & Development",
-            linkUrl: "https://www.stayinmtn.com/",
-            imgUrl: projImg1,
-          },
-    ];
+    const WebProjects = webProjects; // Use the imported array
+    const AppProjects = appProjects; // Use the imported array
+
     return (
         <section className="project" id="projects">
             <Container>
@@ -36,7 +32,7 @@ export const Projects = () => {
                                 <Tab.Pane eventKey="first">
                                     <Row className={"justify-content-center"}>
                                         {
-                                        webProjects.map((project, index) => {
+                                        WebProjects.map((project, index) => {
                                             return (
                                             <ProjectCard
                                                 key={index}
@@ -48,7 +44,18 @@ export const Projects = () => {
                                     </Row>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second">
-                                    <p>Coming soon</p>
+                                <Row className={"justify-content-center"}>
+                                        {
+                                        AppProjects.map((project, index) => {
+                                            return (
+                                            <ProjectCard
+                                                key={index}
+                                                {...project}
+                                                />
+                                            )
+                                        })
+                                        }
+                                    </Row>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="third">
                                     <p>Coming soon</p>
