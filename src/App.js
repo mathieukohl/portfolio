@@ -9,7 +9,7 @@ import { Projects } from './components/Projects';
 import { About } from './components/About';
 import { Footer } from './components/Footer';
 import { FiverrBadge } from './components/FiverrBadge';
-import More from './components/More';
+import More from './components/pages/More';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
