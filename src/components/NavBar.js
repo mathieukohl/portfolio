@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Navbar, Container, Nav } from "react-bootstrap"
+import { Link } from 'react-router-dom';
 import logo from "../assets/img/logo_Mathieu.png"
 import navIcon1 from "../assets/img/nav-icon1.svg"
 import navIcon2 from "../assets/img/nav-icon2.svg"
@@ -48,6 +49,7 @@ export const NavBar = () => {
                   <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
                   <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
                   <Nav.Link href="#about" className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>About</Nav.Link>
+                  <Link style={{ textDecoration: 'none', color: 'inherit' }} to="/more">More</Link>
                 </Nav>
                 <span className="navbar-text">
                   <div className="social-icon">
