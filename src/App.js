@@ -9,8 +9,12 @@ import { Projects } from './components/Projects';
 import { About } from './components/About';
 import { Footer } from './components/Footer';
 import { FiverrBadge } from './components/FiverrBadge';
-import More from './components/pages/More';
 import { Route, Routes } from 'react-router-dom';
+
+import More from './components/pages/More';
+
+import LearnHome from './components/pages/learn/LearnHome';
+import FreeHome from './components/pages/freelance/FreeHome';
 
 function App() {
 
@@ -30,6 +34,14 @@ function App() {
         <Route path="/more" element={<>
           <NavBarPage />
            <More />
+        </>} />
+        <Route path="/freeHome" element={<>
+          <NavBarPage />
+          <FreeHome />
+        </>} />
+        <Route path="/learnHome" element={<>
+          <NavBarPage />
+          <LearnHome />
         </>} />
       </Routes>
     </div>
