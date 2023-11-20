@@ -31,8 +31,7 @@
 .course-list {
     padding-top: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
 }
   
 .course-card {
