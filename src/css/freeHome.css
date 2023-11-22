@@ -61,3 +61,34 @@
 .btn {
     margin: 10px 0 10px 0;
 }
+
+.first-section {
+    margin-top: 20vh;
+    margin-left: 30vh;
+    display: flex;
+    margin-bottom: 5vh;
+}
+
+.column-1 {
+    flex: 1;
+}
+
+.column-2 {
+    flex: 2;
+    padding-left: 25vh;
+}
+
+.carousel-item {
+    margin-left: 90px;
+}
+
+.carousel-item:last-child {
+    margin-right: 0;
+}
+  
+
+.second-section {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+  
