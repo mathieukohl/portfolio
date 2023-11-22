@@ -4,3 +4,106 @@
     padding: 20px;
     margin-top: 100px;
 }
+
+.free-info {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.free-description {
+    flex: 1;
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 200px;
+}
+
+.free-image {
+    flex: 1;
+    max-width: 50%;
+    text-align: center;
+  }
+
+.free-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.free-list {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+  
+.free-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.free-card h3, .free-card p {
+    margin: 5px 0;
+}
+
+.free-card img {
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn {
+    margin: 10px 0 10px 0;
+}
+
+.first-section {
+    margin-top: 20vh;
+    margin-left: 30vh;
+    display: flex;
+    margin-bottom: 5vh;
+}
+
+.carousel-item {
+    margin-left: 50px;
+}
+
+.carousel-item:last-child {
+    margin-right: 0;
+}
+  
+
+.second-section {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.processus-section-header {
+    margin-top: 5vh;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    align-items: center; 
+}
+
+.processus-section {
+    margin-top: 5vh;
+    margin-left: 15vh;
+    margin-right: 15vh;
+    display: flex;
+    align-items: center; 
+    padding-bottom: 10vh;
+}
+
+.review,
+.technical,
+.assessment {
+    flex: 1;
+    padding-right: 11px;
+    text-align: justify;
+}
+  
