@@ -69,17 +69,8 @@
     margin-bottom: 5vh;
 }
 
-.column-1 {
-    flex: 1;
-}
-
-.column-2 {
-    flex: 2;
-    padding-left: 25vh;
-}
-
 .carousel-item {
-    margin-left: 90px;
+    margin-left: 50px;
 }
 
 .carousel-item:last-child {
@@ -90,5 +81,29 @@
 .second-section {
     margin-left: 200px;
     margin-right: 200px;
+}
+
+.processus-section-header {
+    margin-top: 5vh;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    align-items: center; 
+}
+
+.processus-section {
+    margin-top: 5vh;
+    margin-left: 15vh;
+    margin-right: 15vh;
+    display: flex;
+    align-items: center; 
+    padding-bottom: 10vh;
+}
+
+.review,
+.technical,
+.assessment {
+    flex: 1;
+    padding-right: 11px;
+    text-align: justify;
 }
   
