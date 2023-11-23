@@ -15,6 +15,7 @@ import More from './components/pages/More';
 
 import LearnHome from './components/pages/learn/LearnHome';
 import FreeHome from './components/pages/freelance/FreeHome';
+import FormFree from './components/pages/freelance/FreelancerForm';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
           <NavBarPage />
           <FreeHome />
         </>} />
+          <Route path="/freeHome/form" element={<FormFree />} />
         <Route path="/learnHome" element={<>
           <NavBarPage />
           <LearnHome />
