@@ -1,0 +1,59 @@
+.free-form-container {
+    width: 80%;
+    max-width: 600px; /* Adjust the max-width as needed */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+}
+
+.free-form-title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.free-form-options {
+    list-style: none;
+    padding: 0;
+}
+
+.free-form-options li {
+    margin-bottom: 10px;
+}
+
+.free-form-label {
+    display: flex;
+    align-items: center;
+}
+
+.free-form-checkbox {
+    margin-right: 10px;
+}
+
+.free-form-text-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.free-form-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.free-form-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.free-form-button + .free-form-button {
+    margin-left: 10px;
+}

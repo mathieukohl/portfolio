@@ -24,9 +24,17 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function LearnHome() {
+
+    const navigate = useNavigate();
+
+    // Function to handle navigation to a specific route
+    const goToRoute = (route) => {
+        navigate(route);
+    };
 
     const frees = [
         { name: 'Ali', job: 'Software Engineer', img: free1, link : 'https://github.com/stars/mathieukohl/lists/html-css' },
@@ -40,14 +48,13 @@ export default function LearnHome() {
     ];
 
     const jobs = [
-        { job: 'Our Expert Skillsets', desc: 'Discover the best talents to fit your needs'},
+        { job: 'Our experts skills', desc: 'Discover the most Experienced software engineers and programmers possessing proficiency in a wide array of technologies'},
         { job: 'Web Developer', desc: '', img: job1},
         { job: 'Full Stack Developer', desc: '', img: job2},
         { job: 'PHP Developer', desc: '', img: job3},
         { job: 'Mobile Developer', desc: '', img: job4},
         { job: 'React.js Developer', desc: '', img: job5},
     ];
-
 
     const sliderSettings = {
         dots: false,
@@ -64,7 +71,7 @@ export default function LearnHome() {
                 <div className="column-1">
                     <h1>Hire the Top Technical Freelance Talent</h1>
                     <p>Our network of the top freelancers in all of the technical fields, is the perfect match for your company's most important projects.</p>
-                    <Button>Need a Talent</Button>
+                    <Button onClick={() => goToRoute('/freeHome/form')}>Need a Talent</Button>
                 </div>
             </div>
 
@@ -75,7 +82,7 @@ export default function LearnHome() {
                     <div key={index} className='carousel-item'>
                         <img src={free.img} alt={free.name} style={{ maxWidth: '150px', borderRadius: '10px' }} />
                         <p style={{ marginTop: '5px' }} >{free.name}</p>
-                        <p>{free.job}</p>
+                        <p style={{ marginTop: '-15px' }}>{free.job}</p>
                     </div>
                 ))}
                 </Slider>
@@ -86,6 +93,12 @@ export default function LearnHome() {
                 <img src={quote} alt='quote' style={{marginTop: '5vh' }}></img>
                 <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
                 <p>"High-quality freelance developers not only excel in code craftsmanship but also act as strategic problem-solvers for companies. They adeptly navigate complex challenges, offering tailored solutions that not only meet technical requirements but align seamlessly with the company's overarching goals and vision."</p>
+            </div>
+
+            {/* Btn hire Section */}
+            <div className="btn-section">
+                <h1>Want the top experts?</h1>
+                <Button onClick={() => goToRoute('/freeHome/form')}>Hire a Freelancer</Button>
             </div>
 
             {/* Developer Jobs Grid Section */}
@@ -101,9 +114,14 @@ export default function LearnHome() {
             </div>
 
             {/* Hire Processus Section */}
-            <div className="processus-section-header">
+            <div className="processus-section-header"> 
                 <h1 style={{ textAlign: 'center'}}>The processus to find our Talent</h1>
-                <img src={processus} alt='processus' style={{marginTop: '5vh' }}></img>
+                <img
+                    id="processus-image"
+                    src={processus}
+                    alt="processus"
+                    style={{ marginTop: '5vh'}}
+                />
             </div>
             <div className="processus-section">
                 <div className='review'>
@@ -115,9 +133,15 @@ export default function LearnHome() {
                     <p>We administer a technical assessments or coding challenges to evaluate freelancers' proficiency in specific technologies. This step helps ensure that they meet the technical standards required for our clients.</p>
                 </div>
                 <div className='assessment'>
-                    <h2>First contract reviewed by a Senior </h2>
+                    <h2>Reviewed by a Senior </h2>
                     <p>We give our juniors a simple first task to give them an idea of the work involved. This task is supervised by a senior developer to ensure the best possible quality for our customers. </p>
                 </div>
+            </div>
+
+            {/* Btn hire Section */}
+            <div className="btn-section">
+                <h1>Ready to get started?</h1>
+                <Button onClick={() => goToRoute('/freeHome/form')}>Hire a Freelancer</Button>
             </div>
         </div>
     );
