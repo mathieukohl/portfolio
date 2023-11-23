@@ -8,11 +8,16 @@ export default function FreelancerForm() {
     const [answers, setAnswers] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState([]);
 
+    console.log('selectedOptions',selectedOptions)
+
     const questions = useMemo(() => [
         "What skills are you looking for in a freelancer?",
-        "What is your budget for this project?",
-        "What is the expected duration of the project?",
-        // Add more questions as needed
+        "Any specific skills or technologies?",
+        "What type of project are you hiring for?",
+        "How long do you need the developer?",
+        "What level of time commitment will you require from the developer?",
+        "When do you need the developer to start?",
+        "Do you have an hourly rate in mind?"
     ], []); // Empty dependency array since questions does not depend on any props or state
 
     const skillsOptions = [
@@ -22,6 +27,43 @@ export default function FreelancerForm() {
         'Mobile Developer',
         'React.js Developer',
     ];
+
+    const typeOfProject = [
+        'New idea or project',
+        'Existing project that needs more resources',
+        'None of the above',
+    ];
+
+    const timeOfDev = [
+        'Less than 1 week',
+        '1 to 4 weeks',
+        '1 to 3 months',
+        '3 to 6 months',
+        'Longer than 6 months',
+        'Not decided yet',
+    ];
+
+    const hrsOfWork = [
+        'Full time (40 or more hrs/week)',
+        'Part time (Less than 40 hrs/week)',
+        'Hourly',
+        'Not decided yet',
+    ]
+
+    const startTime = [
+        'Immediately',
+        'In 1 to 2 weeks',
+        'More than 2 weeks from now',
+        'Not decided yet',
+    ]
+
+    const hourlyRate = [
+        'Less than $70/hr',
+        '$70 - $90/hr',
+        '$91 - $110/hr',
+        'More than $110/hr',
+        'Not decided yet',
+    ]
 
     const handleCheckboxChange = (option) => {
         const updatedOptions = selectedOptions.includes(option)
@@ -36,6 +78,7 @@ export default function FreelancerForm() {
         setCurrentQuestion(currentQuestion + 1);
         setSelectedOptions([]); // Reset selected options for the next question
     };
+    
 
     const handlePrevious = () => {
         if (currentQuestion > 0) {
@@ -58,6 +101,7 @@ export default function FreelancerForm() {
                         <li key={option}>
                             <label className="free-form-label">
                                 <input
+                                    id={`input-question-${currentQuestion}`}
                                     className="free-form-checkbox"
                                     type="checkbox"
                                     value={option}
@@ -71,14 +115,119 @@ export default function FreelancerForm() {
                 </ul>
             )}
 
-            {currentQuestion !== 0 && (
+            {currentQuestion !== 0 && currentQuestion !== 2 && currentQuestion !== 3 && currentQuestion !== 4 && currentQuestion !== 5 && currentQuestion !== 6 &&(
                 <input
+                    id={`input-question-${currentQuestion}`}
                     className="free-form-text-input"
                     type="text"
                     placeholder="Your Answer"
                     value={answers[currentQuestion] || ''}
-                    onChange={(e) => setAnswers([...answers.slice(0, currentQuestion), e.target.value, ...answers.slice(currentQuestion + 1)])}
+                    onChange={(e) => {
+                        const updatedAnswers = [...answers];
+                        updatedAnswers[currentQuestion] = e.target.value;
+                        setAnswers(updatedAnswers);
+                    }}
                 />
+            )} 
+
+            {currentQuestion === 2 && (
+                <ul className="free-form-options">
+                    {typeOfProject.map((option) => (
+                        <li key={option}>
+                            <label className="free-form-label">
+                                <input
+                                    id={`input-question-${currentQuestion}`}
+                                    className="free-form-checkbox"
+                                    type="checkbox"
+                                    value={option}
+                                    checked={selectedOptions.includes(option)}
+                                    onChange={() => handleCheckboxChange(option)}
+                                />
+                                {option}
+                            </label>
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+            {currentQuestion === 3 && (
+                <ul className="free-form-options">
+                    {timeOfDev.map((option) => (
+                        <li key={option}>
+                            <label className="free-form-label">
+                                <input
+                                    id={`input-question-${currentQuestion}`}    
+                                    className="free-form-checkbox"
+                                    type="checkbox"
+                                    value={option}
+                                    checked={selectedOptions.includes(option)}
+                                    onChange={() => handleCheckboxChange(option)}
+                                />
+                                {option}
+                            </label>
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+            {currentQuestion === 4 && (
+                <ul className="free-form-options">
+                    {hrsOfWork.map((option) => (
+                        <li key={option}>
+                            <label className="free-form-label">
+                                <input
+                                    id={`input-question-${currentQuestion}`}
+                                    className="free-form-checkbox"
+                                    type="checkbox"
+                                    value={option}
+                                    checked={selectedOptions.includes(option)}
+                                    onChange={() => handleCheckboxChange(option)}
+                                />
+                                {option}
+                            </label>
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+            {currentQuestion === 5 && (
+                <ul className="free-form-options">
+                    {startTime.map((option) => (
+                        <li key={option}>
+                            <label className="free-form-label">
+                                <input
+                                    id={`input-question-${currentQuestion}`}
+                                    className="free-form-checkbox"
+                                    type="checkbox"
+                                    value={option}
+                                    checked={selectedOptions.includes(option)}
+                                    onChange={() => handleCheckboxChange(option)}
+                                />
+                                {option}
+                            </label>
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+            {currentQuestion === 6 && (
+                <ul className="free-form-options">
+                    {hourlyRate.map((option) => (
+                        <li key={option}>
+                            <label className="free-form-label">
+                                <input
+                                    id={`input-question-${currentQuestion}`}
+                                    className="free-form-checkbox"
+                                    type="checkbox"
+                                    value={option}
+                                    checked={selectedOptions.includes(option)}
+                                    onChange={() => handleCheckboxChange(option)}
+                                />
+                                {option}
+                            </label>
+                        </li>
+                    ))}
+                </ul>
             )}
 
             {currentQuestion > 0 && (
@@ -91,8 +240,11 @@ export default function FreelancerForm() {
                 <Button
                     className="free-form-button"
                     onClick={handleNext}
-                    disabled={currentQuestion === 0 ? selectedOptions.length === 0 : !answers[currentQuestion]}
-                >
+                    disabled={
+                        (currentQuestion === 0 || currentQuestion === 2 || currentQuestion === 3 || currentQuestion === 4 || currentQuestion === 5 || currentQuestion === 6)
+                            ? selectedOptions.length === 0
+                            : !answers[currentQuestion]
+                    }                    >
                     Next
                 </Button>
             )}
@@ -102,9 +254,9 @@ export default function FreelancerForm() {
                 <Button
                     className="free-form-button"
                     onClick={() => console.log('Submitting answers:', answers)}
-                    disabled={!answers[currentQuestion]}
+                    disabled={currentQuestion === 6 ? selectedOptions.length === 0 : !answers[currentQuestion]}
                 >
-                    Submit
+                    Connect Me With a Freelancer
                 </Button>
             )}
         </div>
