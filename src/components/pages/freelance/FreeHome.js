@@ -1,16 +1,23 @@
 import React from 'react';
 import '../../../css/freeHome.css';
 
-import free1 from "../../../assets/img/freelance/free1.png";
-import free2 from "../../../assets/img/freelance/free2.png";
-import free3 from "../../../assets/img/freelance/free3.png";
-import free4 from "../../../assets/img/freelance/free4.png";
-import free5 from "../../../assets/img/freelance/free5.png";
-import free6 from "../../../assets/img/freelance/free6.png";
-import free7 from "../../../assets/img/freelance/free7.png";
-import free8 from "../../../assets/img/freelance/free8.png";
+import free1 from "../../../assets/img/freelance/1.png";
+import free2 from "../../../assets/img/freelance/2.png";
+import free3 from "../../../assets/img/freelance/3.png";
+import free4 from "../../../assets/img/freelance/4.png";
+import free5 from "../../../assets/img/freelance/5.png";
+import free6 from "../../../assets/img/freelance/6.png";
+import free7 from "../../../assets/img/freelance/7.png";
+import free8 from "../../../assets/img/freelance/8.png";
+
+import job1 from "../../../assets/img/jobs/1.png";
+import job2 from "../../../assets/img/jobs/2.png";
+import job3 from "../../../assets/img/jobs/3.png";
+import job4 from "../../../assets/img/jobs/4.png";
+import job5 from "../../../assets/img/jobs/5.png";
 
 import processus from "../../../assets/img/process.png";
+import quote from "../../../assets/img/computer.jpg";
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -30,6 +37,15 @@ export default function LearnHome() {
         { name: 'Sohail', job: 'Full Stack Developer', img: free4, link : 'https://github.com/stars/mathieukohl/lists/html-css' },
         { name: 'Shanto', job: 'Software Engineer', img: free8, link : 'https://github.com/stars/mathieukohl/lists/html-css' },
         { name: 'Harminder', job: 'Full Stack Developer', img: free5, link : 'https://github.com/stars/mathieukohl/lists/html-css' },
+    ];
+
+    const jobs = [
+        { job: 'Our Expert Skillsets', desc: 'Discover the best talents to fit your needs'},
+        { job: 'Web Developer', desc: '', img: job1},
+        { job: 'Full Stack Developer', desc: '', img: job2},
+        { job: 'PHP Developer', desc: '', img: job3},
+        { job: 'Mobile Developer', desc: '', img: job4},
+        { job: 'React.js Developer', desc: '', img: job5},
     ];
 
 
@@ -53,7 +69,7 @@ export default function LearnHome() {
             </div>
 
             {/* Second Section - Carousel */}
-            <div className="second-section">
+            <div className="carousel-section">
                 <Slider {...sliderSettings}>
                 {frees.map((free, index) => (
                     <div key={index} className='carousel-item'>
@@ -65,6 +81,26 @@ export default function LearnHome() {
                 </Slider>
             </div>
 
+            {/* Img divider quotes Section */}
+            <div className="quote-section">
+                <img src={quote} alt='quote' style={{marginTop: '5vh' }}></img>
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
+                <p>"High-quality freelance developers not only excel in code craftsmanship but also act as strategic problem-solvers for companies. They adeptly navigate complex challenges, offering tailored solutions that not only meet technical requirements but align seamlessly with the company's overarching goals and vision."</p>
+            </div>
+
+            {/* Developer Jobs Grid Section */}
+            <div className="developer-jobs-section">
+                {jobs.slice(0, 6).map((job, index) => (
+                    <div key={index} className={`grid-item ${index !== 0 ? 'with-background' : ''}`} style={index !== 0 ? { backgroundImage: `url(${job.img})` } : null}>
+                        <div className="grid-content">
+                            <h2>{job.job}</h2>
+                            <p>{job.desc}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* Hire Processus Section */}
             <div className="processus-section-header">
                 <h1 style={{ textAlign: 'center'}}>The processus to find our Talent</h1>
                 <img src={processus} alt='processus' style={{marginTop: '5vh' }}></img>

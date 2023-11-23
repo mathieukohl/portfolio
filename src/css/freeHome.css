@@ -5,70 +5,19 @@
     margin-top: 100px;
 }
 
-.free-info {
+/* Header info */
+.first-section {
+    margin-top: 25vh;
+    margin-left: 30vh;
     display: flex;
-    align-items: center;
-    margin-top: 100px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.free-description {
-    flex: 1;
-    text-align: left;
-    margin-left: 50px;
-    margin-right: 200px;
-}
-
-.free-image {
-    flex: 1;
-    max-width: 50%;
-    text-align: center;
-  }
-
-.free-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-}
-
-.free-list {
-    padding-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-}
-  
-.free-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-}
-
-.free-card h3, .free-card p {
-    margin: 5px 0;
-}
-
-.free-card img {
-    border-radius: 10px;
-    height: 200px;
-    object-fit: cover;
+    margin-bottom: 5vh;
 }
 
 .btn {
     margin: 10px 0 10px 0;
 }
 
-.first-section {
-    margin-top: 20vh;
-    margin-left: 30vh;
-    display: flex;
-    margin-bottom: 5vh;
-}
-
+/* Carousel */
 .carousel-item {
     margin-left: 50px;
 }
@@ -76,13 +25,77 @@
 .carousel-item:last-child {
     margin-right: 0;
 }
-  
 
-.second-section {
+.carousel-section {
     margin-left: 200px;
     margin-right: 200px;
 }
 
+/* Quote with image */
+.quote-section {
+    position: relative;
+}
+
+.quote-section img{
+    max-width: 100% ;
+    height: 300px;
+    object-fit: cover;
+}
+
+.quote-section p{
+    margin-left: 30vh;
+    margin-right: 30vh;
+    position: absolute;
+    transform:translate(0%, -170%) ;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Developer jobs section */
+.developer-jobs-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 10vh;
+    margin-left: 30vh;
+    margin-right: 30vh;
+}
+
+.grid-item {
+    height: 400px; 
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.grid-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /* Center the text horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 400px;
+    width: 500px;
+}
+
+.grid-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.grid-content p {
+    font-size: 1rem;
+    color: white;
+}
+
+/* Hire processus section */
 .processus-section-header {
     margin-top: 5vh;
     margin-left: 10vh;
