@@ -3,6 +3,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavBar } from "./components/NavBar";
 import { NavBarPage } from "./components/NavBarPage";
+import { NavBarFreelance } from "./components/NavBarFreelance";
 import { Banner } from "./components/Banner";
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
@@ -37,10 +38,13 @@ function App() {
            <More />
         </>} />
         <Route path="/freeHome" element={<>
-          <NavBarPage />
+          <NavBarFreelance />
           <FreeHome />
         </>} />
-          <Route path="/freeHome/form" element={<FormFree />} />
+          <Route path="/freeHome/form" element={<>
+            <NavBarFreelance />
+            <FormFree />
+          </>} />
         <Route path="/learnHome" element={<>
           <NavBarPage />
           <LearnHome />
