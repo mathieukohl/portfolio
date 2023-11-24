@@ -3,12 +3,21 @@ import { Button } from 'react-bootstrap';
 
 import '../../../css/freeForm.css';
 
+import { useNavigate } from 'react-router-dom';
+
 export default function FreelancerForm() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [answers, setAnswers] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState([]);
+    const [showThankYou, setShowThankYou] = useState(false);
+    const [showLast, setShowLast] = useState(true);
 
-    console.log('selectedOptions',selectedOptions)
+    const navigate = useNavigate();
+
+    // Function to handle navigation to a specific route
+    const goToRoute = (route) => {
+        navigate(route);
+    };
 
     const questions = useMemo(() => [
         "What skills are you looking for in a freelancer?",
@@ -86,6 +95,16 @@ export default function FreelancerForm() {
         }
     };
 
+    const handleSubmit = () => {
+        console.log('Submitting answers:', answers);
+        // Add logic to handle form submission and connect with a freelancer
+        // You can display a confirmation message or redirect the user to a thank you page
+
+        // For demonstration purposes, let's assume a successful submission
+        setShowThankYou(true);
+        setShowLast(false);
+    };
+
     useEffect(() => {
         // You can perform any additional actions based on answers or question changes here
         console.log(`Question: ${questions[currentQuestion]}, Answer: ${answers[currentQuestion]}`);
@@ -93,7 +112,9 @@ export default function FreelancerForm() {
 
     return (
         <div className="free-form-container">
+            { showLast && (
             <h1 className="free-form-title">{questions[currentQuestion]}</h1>
+            )}
 
             {currentQuestion === 0 && (
                 <ul className="free-form-options">
@@ -210,7 +231,7 @@ export default function FreelancerForm() {
                 </ul>
             )}
 
-            {currentQuestion === 6 && (
+            {currentQuestion === 6 && showLast &&(
                 <ul className="free-form-options">
                     {hourlyRate.map((option) => (
                         <li key={option}>
@@ -230,13 +251,13 @@ export default function FreelancerForm() {
                 </ul>
             )}
 
-            {currentQuestion > 0 && (
+            {currentQuestion > 0 && showLast &&(
                 <Button className="free-form-button" onClick={handlePrevious}>
                     Previous
                 </Button>
             )}
 
-            {currentQuestion < questions.length - 1 && (
+            {currentQuestion < questions.length - 1 && showLast &&(
                 <Button
                     className="free-form-button"
                     onClick={handleNext}
@@ -250,15 +271,29 @@ export default function FreelancerForm() {
             )}
 
             {/* Display a "Submit" button on the last question page */}
-            {currentQuestion === questions.length - 1 && (
+            {currentQuestion === questions.length - 1 && showLast && (
                 <Button
                     className="free-form-button"
-                    onClick={() => console.log('Submitting answers:', answers)}
+                    onClick={handleSubmit}
                     disabled={currentQuestion === 6 ? selectedOptions.length === 0 : !answers[currentQuestion]}
                 >
                     Connect Me With a Freelancer
                 </Button>
             )}
+
+            {showThankYou && (
+                <div>
+                    <p className="thank-you-message">
+                        Thank you for your time! We will contact you as soon as possible with the right freelancer for your project.
+                    </p>
+                    <Button
+                        className="free-form-button"
+                        onClick={() => goToRoute('/freeHome')}
+                    >
+                        Back to Home
+                    </Button>
+                </div>
+            )}
         </div>
     );
-}
+} 
