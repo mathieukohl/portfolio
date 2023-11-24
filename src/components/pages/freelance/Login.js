@@ -7,12 +7,17 @@ const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const envUsername = process.env.REACT_APP_USERNAME;
+  const envPassword = process.env.REACT_APP_PASSWORD;
+
+  console.log('data', username + ' ' + password)
+
   const handleLogin = () => {
     // Add your authentication logic here
     // For example, you can check if the entered username and password are correct
 
     // For demonstration purposes, let's assume a simple check
-    if (username === 'mathieu' && password === 'password') {
+    if (username === envUsername && password === envPassword) {
       onLogin();
     } else {
       alert('Invalid credentials. Please try again.');
