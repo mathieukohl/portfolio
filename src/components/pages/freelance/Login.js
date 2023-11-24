@@ -1,7 +1,5 @@
-// Login.js
-
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Container, Row, Col } from 'react-bootstrap';
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -25,31 +23,37 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <Form style={{ marginLeft: '100vh', marginRight: '100vh'}}>
-      <Form.Group controlId="formUsername">
-        <Form.Label>Username</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter your username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </Form.Group>
+    <Container>
+      <Row className="justify-content-md-center">
+        <Col xs={12} md={6}>
+          <Form>
+            <Form.Group controlId="formUsername">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter your username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </Form.Group>
 
-      <Form.Group controlId="formPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </Form.Group>
+            <Form.Group controlId="formPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
 
-      <Button variant="primary" onClick={handleLogin}>
-        Login
-      </Button>
-    </Form>
+            <Button variant="primary" onClick={handleLogin}>
+              Login
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import '../../../css/freeHome.css';
 
 import free1 from "../../../assets/img/freelance/1.png";
@@ -156,10 +157,16 @@ export default function LearnHome() {
             </div>
             ) : (
             // Render the login component when the user is not logged in
-            <div>
-                <h1 style={{ marginTop: '20vh', marginLeft: '100vh'}}>Please Login</h1>
-                <Login onLogin={handleLogin} />
-            </div>
+            <Container>
+                <Row className="justify-content-md-center">
+                    <Col xs={12} md={6}>
+                    <div style={{ marginTop: '20vh', textAlign: 'center' }}>
+                        <h1>Please Login</h1>
+                        <Login onLogin={handleLogin} />
+                    </div>
+                    </Col>
+                </Row>
+            </Container>
             )}
         </div>
     );
