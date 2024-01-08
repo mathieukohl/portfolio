@@ -13,6 +13,7 @@ import { FiverrBadge } from './components/FiverrBadge';
 import { Route, Routes } from 'react-router-dom';
 
 import More from './components/pages/More';
+import UnderConstruction from './components/pages/UnderConstruction';
 
 import LearnHome from './components/pages/learn/LearnHome';
 import FreeHome from './components/pages/freelance/FreeHome';
@@ -35,7 +36,8 @@ function App() {
         </>} />
         <Route path="/more" element={<>
           <NavBarPage />
-           <More />
+           {/* <More /> */}
+           <UnderConstruction/>
         </>} />
         <Route path="/freeHome" element={<>
           <NavBarFreelance />
