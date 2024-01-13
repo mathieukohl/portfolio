@@ -3,6 +3,7 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import { webProjects } from "./projects/WebProject";
 import { appProjects } from "./projects/AppProject";
+import { Gallery } from "./Gallery";
 
 export const Projects = () => {
 
@@ -30,18 +31,7 @@ export const Projects = () => {
                             </Nav>
                             <Tab.Content>
                                 <Tab.Pane eventKey="first">
-                                    <Row className={"justify-content-center"}>
-                                        {
-                                        WebProjects.map((project, index) => {
-                                            return (
-                                            <ProjectCard
-                                                key={index}
-                                                {...project}
-                                                />
-                                            )
-                                        })
-                                        }
-                                    </Row>
+                                    <Gallery/>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second">
                                 <Row className={"justify-content-center"}>

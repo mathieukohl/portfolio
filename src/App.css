@@ -652,6 +652,45 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
+/************ Gallery Css ************/
+
+.gallery_body {
+  display: grid;
+  place-items: center;
+  height: 50vh;
+}
+
+.gallery{
+  display: flex;
+  gap: 1rem;
+  max-width: 80rem;
+}
+
+.card {
+  position: relative;
+  left: 0px;
+  width: 12rem;
+  border-radius: 1.2rem;
+  height: 30rem;
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+  flex: 0.25;
+}
+
+.card img {
+  position: relative;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.card:hover {
+  flex: 2;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
 /************ Footer Css ************/
 .footer {
   padding: 20px 0 50px 0;
