@@ -20,6 +20,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* TO DEBUG SCROLLING */
+  /* outline: 1px solid red; */
 }
 
 html {
@@ -164,6 +166,9 @@ span.navbar-text {
 }
 .navbar-text button span {
   z-index: 1;
+}
+.img_rotate {
+  width: 90%;
 }
 .navbar-text button::before {
   content: "";
@@ -670,6 +675,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
   left: 0px;
   width: 12rem;
+  border: none !important;
   border-radius: 1.2rem;
   height: 30rem;
   overflow: hidden;
@@ -690,6 +696,28 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   cursor: pointer;
   border-radius: 1rem;
 }
+
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
+  .gallery_body {
+    height: auto;
+  }
+
+  .gallery {
+    flex-direction: column; /* Stack cards in a column */
+  }
+
+  .card {
+    width: 100%; /* Full width cards on smaller screens */
+    height: auto; /* Adjust height automatically */
+    flex: none; /* Disable flex grow/shrink */
+  }
+
+  .card:hover {
+    flex: none;
+  }
+}
+
 
 /************ Footer Css ************/
 .footer {
@@ -771,9 +799,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: 20px;
 }
 
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
 .social-icon-footer {
   display: inline-block;
   margin-left: 14px;
+  width: 90% !important;
+}
 }
 .social-icon-footer a {
   width: 42px;
