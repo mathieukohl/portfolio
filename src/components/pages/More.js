@@ -9,13 +9,13 @@ export default function More() {
   return (
     <div className="landing-page">
       <div className="image-container">
-        <a href="/freeHome">
+        <a href="/more/freeHome">
           <h1 className='img-title'>Need a freelancer ?</h1>
           <img className='img-landing' src={img1} alt="img" />
         </a>
       </div>
       <div className="image-container">
-        <a href="/learnHome">
+        <a href="/more/learnHome">
           <h1 className='img-title'>Want to learn to dev ?</h1>
           <img className='img-landing' src={img2} alt="img" />
         </a>

@@ -11,6 +11,7 @@ import { About } from './components/About';
 import { Footer } from './components/Footer';
 import { FiverrBadge } from './components/FiverrBadge';
 import { Route, Routes } from 'react-router-dom';
+import NotFoundPage from './components/NotFoundPage';
 
 import More from './components/pages/More';
 import UnderConstruction from './components/pages/UnderConstruction';
@@ -36,21 +37,22 @@ function App() {
         </>} />
         <Route path="/more" element={<>
           <NavBarPage />
-           {/* <More /> */}
-           <UnderConstruction/>
+           <More />
+           {/* <UnderConstruction/> */}
         </>} />
-        <Route path="/freeHome" element={<>
+        <Route path="/more/freeHome" element={<>
           <NavBarFreelance />
           <FreeHome />
         </>} />
-          <Route path="/freeHome/form" element={<>
+          <Route path="/more/freeHome/form" element={<>
             <NavBarFreelance />
             <FormFree />
           </>} />
-        <Route path="/learnHome" element={<>
+        <Route path="/more/learnHome" element={<>
           <NavBarPage />
           <LearnHome />
         </>} />
+        <Route path="*" element={<NotFoundPage />} /> {/* Fallback route */}
       </Routes>
     </div>
   );

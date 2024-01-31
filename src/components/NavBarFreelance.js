@@ -25,12 +25,12 @@ export const NavBarFreelance = () => {
     return (
           <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
             <Container>
-              <Navbar.Brand href="/freeHome">
+              <Navbar.Brand href="/">
                 <img src={logo} alt="Logo" />
               </Navbar.Brand>
               {/* <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ms-auto">
-                  <Link class="navbar-link nav-link" to="/freeHome">Home</Link>
+                  <Link className="navbar-link nav-link" to="/freeHome">Home</Link>
                 </Nav>
               </Navbar.Collapse> */}
             </Container>

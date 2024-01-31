@@ -30,21 +30,21 @@ export const FiverrBadge = () => {
                     <h2>Contact me on Fiverr</h2>
                     <div id="fiverr-badge-container">
                         <div
-                            itemscope
-                            itemtype="http://schema.org/Person"
+                            itemScope
+                            itemType="http://schema.org/Person"
                             className="fiverr-seller-widget"
                         >
                             <div id="fiverr-widget-seller-data" style={{ display: 'none' }}>
-                                <h2 itemprop="name">kohlmathieu</h2>
-                                <div itemscope itemtype="http://schema.org/Organization">
-                                <span itemprop="name">Fiverr</span>
+                                <h2 itemProp="name">kohlmathieu</h2>
+                                <div itemScope itemType="http://schema.org/Organization">
+                                <span itemProp="name">Fiverr</span>
                                 </div>
-                                <h2 itemprop="jobtitle">Seller</h2>
-                                <div itemprop="description"></div>
+                                <h2 itemProp="jobtitle">Seller</h2>
+                                <div itemProp="description"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div className="text-center">
                         <a href="https://www.fiverr.com/kohlmathieu" target="_blank" rel="noopener noreferrer">
                             <Button>
                                 Check out my Gigs
