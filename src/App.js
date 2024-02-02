@@ -20,6 +20,7 @@ import LearnHome from './components/pages/learn/LearnHome';
 import FreeHome from './components/pages/freelance/FreeHome';
 import FormFree from './components/pages/freelance/FreelancerForm';
 import ArticlesTemplate from './components/pages/learn/ArticlesTemplate'
+import ArticlesGrid from './components/pages/learn/ArticlesGrid';
 
 function App() {
 
@@ -52,6 +53,13 @@ function App() {
         <Route path="/more/learnHome" element={<>
           <NavBarPage />
           <LearnHome />
+        </>} />
+        <Route path="/more/learnHome/reactjs" element={<>
+          <NavBarPage />
+          <ArticlesGrid/>
+        </>} />
+        <Route path="/more/learnHome/reactjs/article/:articleId" element={<>
+          <NavBarPage />
           <ArticlesTemplate/>
         </>} />
         <Route path="*" element={<NotFoundPage />} /> {/* Fallback route */}

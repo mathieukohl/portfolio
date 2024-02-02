@@ -12,7 +12,7 @@ export default function learnHome() {
 
     const courses = [
         { title: 'CSS Courses', description: 'Learn about Cascading Style Sheets.', img: css, link : 'https://github.com/stars/mathieukohl/lists/html-css' },
-        { title: 'React.js Courses', description: 'Master building web applications with React.js.', img: reactjs, link : 'https://github.com/stars/mathieukohl/lists/reactjs' },
+        { title: 'React.js Courses', description: 'Master building web applications with React.js.', img: reactjs, link : '/more/learnHome/reactjs' },
         { title: 'React Native Courses', description: 'Develop mobile apps with React Native.', img: reactnative, link : 'https://github.com/stars/mathieukohl/lists/reactnative' },
     ];
 

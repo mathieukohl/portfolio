@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import '../../../App.css';
 
 export default function BlogPost() {
@@ -6,43 +7,60 @@ export default function BlogPost() {
         title: '', 
         imageUrl: '', 
         description: '', 
-        sections: []
+        sections: [],
+        githubLink: '',
     });
+    const { articleId } = useParams(); // Extract articleId from URL
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:3000/getArticles")
+        fetch(`http://localhost:3000/getArticles`)
           .then(response => response.json())
           .then(data => {
-            if (data.length > 0) {
-              // Convert the sections object into an array of its values
-              const sectionsArray = Object.keys(data[0])
-                .filter(key => key.startsWith('section'))
-                .map(key => ({
-                  sectionTitle: data[0][key][0], // Assuming first element is the title
-                  sectionDescription: data[0][key][1], // Second element is the description
-                  codeSnippet: data[0][key][2], // Third element is the code snippet
-                  additionalText: data[0][key][3] // Fourth element is additional text
-                }));
+            const article = data.find(article => article.id === articleId);
+            console.log('article',article)
+            if (article) {
+              if (data.length > 0) {
+                // Convert the sections object into an array of its values
+                const sectionsArray = Object.keys(article)
+                  .filter(key => key.startsWith('section'))
+                  .map(key => ({
+                    sectionTitle: article[key][0], // Assuming first element is the title
+                    sectionDescription: article[key][1], // Second element is the description
+                    codeSnippet: article[key][2], // Third element is the code snippet
+                    additionalText: article[key][3] // Fourth element is additional text
+                  }));
 
-              setPostData({
-                title: data[0].title,
-                imageUrl: data[0].imageUrl,
-                description: data[0].description,
-                sections: sectionsArray
-              });
+                setPostData({
+                  title: article.title,
+                  imageUrl: article.imageUrl,
+                  description: article.description,
+                  sections: sectionsArray,
+                  githubLink: article.github_link,
+                });
+              }
             }
-            console.log('data', data)
+            setIsLoading(false);
           })
           .catch(error => {
             console.error('Error fetching data: ', error);
+            setIsLoading(false);
           });
-    }, []);
+    }, [articleId]);
 
     const copyToClipboard = (codeSnippet) => {
         navigator.clipboard.writeText(codeSnippet)
           .then(() => alert('Code copied to clipboard!'))
           .catch(err => console.error('Could not copy text: ', err));
     };
+
+    if (isLoading) {
+      return (
+          <div className="loader-container">
+              <div className="loader"></div>
+          </div>
+      );
+  }
 
     return (
         <div className="blog-post">
@@ -61,6 +79,9 @@ export default function BlogPost() {
                     <p className="blog-description">{section.additionalText}</p>
                 </div>
             ))}
+            <div className="button-container">
+              <a href={postData.githubLink} target="_blank" rel="noreferrer"> <button className='blog-button-cta'> Full Example Code </button> </a>
+            </div>
         </div>
     );
 }

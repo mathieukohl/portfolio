@@ -55,7 +55,7 @@
 .course-card img {
     border-radius: 10px;
     width: 100%; /* Adjusted width for smaller screens */
-    height: auto;
+    height: 200px;
     object-fit: cover;
 }
 
