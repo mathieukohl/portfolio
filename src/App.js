@@ -11,7 +11,7 @@ import { About } from './components/About';
 import { Footer } from './components/Footer';
 import { FiverrBadge } from './components/FiverrBadge';
 import { Route, Routes } from 'react-router-dom';
-import NotFoundPage from './components/NotFoundPage';
+import NotFoundPage from './components/NotFoundPage'; 
 
 import More from './components/pages/More';
 import UnderConstruction from './components/pages/UnderConstruction';
@@ -19,6 +19,7 @@ import UnderConstruction from './components/pages/UnderConstruction';
 import LearnHome from './components/pages/learn/LearnHome';
 import FreeHome from './components/pages/freelance/FreeHome';
 import FormFree from './components/pages/freelance/FreelancerForm';
+import ArticlesTemplate from './components/pages/learn/ArticlesTemplate'
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
         <Route path="/more/learnHome" element={<>
           <NavBarPage />
           <LearnHome />
+          <ArticlesTemplate/>
         </>} />
         <Route path="*" element={<NotFoundPage />} /> {/* Fallback route */}
       </Routes>
