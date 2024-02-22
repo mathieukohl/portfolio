@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && rsync -avz --delete /Users/kohlmathieu/Documents/DEV/WEB/PORTFOLIO/Project/portfolio/build/ 9s1i0_kohlmathieu@9s1i0.ftp.infomaniak.com:~/sites/kohlmathieu.com",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

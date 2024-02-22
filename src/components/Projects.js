@@ -15,7 +15,7 @@ export const Projects = () => {
                 <Row>
                     <Col>
                         <h2>Projects</h2>
-                        <p>Below, you'll find a selection of some of my recent work as a full-stack developer. Each project showcases my skills and expertise in a range of technologies</p>
+                        <p style={{ textAlign: 'center' }}>Below, you'll find a selection of some of my recent work as a full-stack developer. Each project showcases my skills and expertise in a range of technologies</p>
                         <Tab.Container id="projects-tabs" defaultActiveKey="first">
                             <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                 <Nav.Item>
