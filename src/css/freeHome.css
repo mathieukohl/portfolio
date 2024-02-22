@@ -135,3 +135,71 @@
     text-align: center;
 }
   
+
+/****************************/
+
+
+@media only screen and (max-width: 768px) {
+    /* ... (your existing media query styles) */
+
+    /* Header info */
+    .first-section {
+        margin: 10vh 5vw; /* Adjust margin for smaller screens */
+    }
+
+    .first-section Button{
+        display: none;
+    }
+
+    /* Update styles for small screens here */
+    .carousel-section {
+        display: none;
+    }
+
+    .quote-section {
+        display: none; /* Hide the quote-section on smaller screens */
+    }
+
+    .developer-jobs-section {
+        grid-template-columns: 1fr;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .grid-item {
+        height: 200px;
+    }
+
+    .grid-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .grid-content p {
+        font-size: 0.9rem;
+    }
+
+    .processus-section-header img {
+        display: none;
+    }
+
+    .processus-section {
+        flex-direction: column; /* Change flex direction to column for smaller screens */
+        align-items: flex-start; /* Align items to the start of the flex container */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .review,
+    .technical,
+    .assessment {
+        margin-left: 10px; /* Add margin between the sections */
+        margin-right: 10px;
+        width: auto; /* Reset width to auto for original width */
+    }
+
+
+    .btn-section {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}

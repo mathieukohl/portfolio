@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../css/landingPage.css';
 
 import img1 from "../../assets/img/home/freelance.jpg";
@@ -9,16 +10,16 @@ export default function More() {
   return (
     <div className="landing-page">
       <div className="image-container">
-        <a href="/freeHome">
+      <Link to="/more/freeHome">
           <h1 className='img-title'>Need a freelancer ?</h1>
           <img className='img-landing' src={img1} alt="img" />
-        </a>
+        </Link>
       </div>
       <div className="image-container">
-        <a href="/learnHome">
+        <Link to="/more/learnHome">
           <h1 className='img-title'>Want to learn to dev ?</h1>
           <img className='img-landing' src={img2} alt="img" />
-        </a>
+        </Link>
       </div>
     </div>
   );

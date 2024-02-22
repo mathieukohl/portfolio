@@ -15,7 +15,7 @@ export const Footer = () => {
               <a href="https://www.instagram.com/kohlmathieu/"><img src={navIcon3} alt="instagram" /></a>
               <a href="https://www.fiverr.com/kohlmathieu"><img src={navIcon4} alt="fiverr" /></a>
             </div>
-            <p>Copyright 2023. All Rights Reserved</p>
+            <p>Copyright 2024. All Rights Reserved</p>
         </Row>
       </Container>
     </footer>

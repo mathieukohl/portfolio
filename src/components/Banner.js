@@ -67,7 +67,7 @@ export const Banner = () => {
                     </Col>
                     <Col xs={12} md={6} xl={5}>
                             <div className={ "animate__animated animate__zoomIn"}>
-                                <img class="img_rotate" src={headerImg} alt="Header Img"/>
+                                <img className="img_rotate" src={headerImg} alt="Header Img"/>
                             </div>
                     </Col>
                 </Row>

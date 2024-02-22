@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import '../../../css/freeHome.css';
 
 import free1 from "../../../assets/img/freelance/1.png";
@@ -26,6 +27,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
+import Login from './Login';
+
 
 export default function LearnHome() {
 
@@ -34,6 +37,12 @@ export default function LearnHome() {
     // Function to handle navigation to a specific route
     const goToRoute = (route) => {
         navigate(route);
+    };
+
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    const handleLogin = () => {
+        setLoggedIn(true);
     };
 
     const frees = [
@@ -66,6 +75,8 @@ export default function LearnHome() {
 
     return (
         <div className="home-page">
+            {loggedIn ? (
+            <div>
             {/* First Section */}
             <div className="first-section">
                 <div className="column-1">
@@ -75,7 +86,7 @@ export default function LearnHome() {
                 </div>
             </div>
 
-            {/* Second Section - Carousel */}
+           { /* Second Section - Carousel */}
             <div className="carousel-section">
                 <Slider {...sliderSettings}>
                 {frees.map((free, index) => (
@@ -143,6 +154,20 @@ export default function LearnHome() {
                 <h1>Ready to get started?</h1>
                 <Button onClick={() => goToRoute('/freeHome/form')}>Hire a Freelancer</Button>
             </div>
+            </div>
+            ) : (
+            // Render the login component when the user is not logged in
+            <Container>
+                <Row className="justify-content-md-center">
+                    <Col xs={12} md={6}>
+                    <div style={{ marginTop: '20vh', textAlign: 'center' }}>
+                        <h1>Please Login</h1>
+                        <Login onLogin={handleLogin} />
+                    </div>
+                    </Col>
+                </Row>
+            </Container>
+            )}
         </div>
     );
 };

@@ -1,12 +1,12 @@
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import { webProjects } from "./projects/WebProject";
 import { appProjects } from "./projects/AppProject";
+import { Gallery } from "./Gallery";
+import { Web_Gallery } from "./Web_Gallery"
 
 export const Projects = () => {
 
-    const WebProjects = webProjects; // Use the imported array
     const AppProjects = appProjects; // Use the imported array
 
     return (
@@ -22,6 +22,9 @@ export const Projects = () => {
                                     <Nav.Link eventKey="first">Web</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
+                                    <Nav.Link eventKey="wordpress">CMS</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
                                     <Nav.Link eventKey="second">App</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
@@ -30,18 +33,10 @@ export const Projects = () => {
                             </Nav>
                             <Tab.Content>
                                 <Tab.Pane eventKey="first">
-                                    <Row className={"justify-content-center"}>
-                                        {
-                                        WebProjects.map((project, index) => {
-                                            return (
-                                            <ProjectCard
-                                                key={index}
-                                                {...project}
-                                                />
-                                            )
-                                        })
-                                        }
-                                    </Row>
+                                    <Web_Gallery/>
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="wordpress">
+                                    <Gallery/>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second">
                                 <Row className={"justify-content-center"}>
@@ -58,7 +53,7 @@ export const Projects = () => {
                                     </Row>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="third">
-                                    <p>Coming soon</p>
+                                    <p style={{ textAlign: 'center' }}>Coming soon</p>
                                 </Tab.Pane>
                             </Tab.Content>
                         </Tab.Container>

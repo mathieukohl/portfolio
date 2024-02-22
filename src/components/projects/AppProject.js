@@ -8,12 +8,5 @@ export const appProjects = [
         description2: "Development in progress",
         linkUrl: "https://github.com/mathieukohl/fridge_manager",
         imgUrl: projImg1,
-    },
-    {
-        title: "-",
-        description: "Virtual girlfriend app",
-        description2: "Development in progress",
-        //linkUrl: "",
-        imgUrl: projImg2,
-    },
+    }
 ];
